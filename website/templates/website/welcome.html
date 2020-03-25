@@ -9,8 +9,14 @@
     <p>
         This is a demo application
     </p>
-    <p>
-        There are currently {{  num_meetings }} meetings scheduled.
-    </p>
+    <ul>
+        {% for meeting in meetings %}
+            <li>
+                <a href="/meetings/{{meeting.id}}">
+                    {{meeting.title}}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
